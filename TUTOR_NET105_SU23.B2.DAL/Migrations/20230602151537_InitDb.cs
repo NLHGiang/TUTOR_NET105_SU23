@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -9,13 +8,13 @@ namespace TUTOR_NET105_SU23.B2.DAL.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-			migrationBuilder.DropTable(
-	        name: "User");
+            migrationBuilder.DropTable(
+            name: "User");
 
-			migrationBuilder.DropTable(
-				name: "Role");
+            migrationBuilder.DropTable(
+                name: "Role");
 
-			migrationBuilder.CreateTable(
+            migrationBuilder.CreateTable(
                 name: "Role",
                 columns: table => new
                 {

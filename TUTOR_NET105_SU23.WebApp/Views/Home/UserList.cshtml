@@ -1,0 +1,11 @@
+﻿@using TUTOR_NET105_SU23.B2.DAL.Entities;
+@model List<User>
+
+<div>
+    @foreach(var item in Model)
+    {
+        <div>
+            @string.Concat(item.Id, "-", item.Email)
+        </div>
+    }
+</div>
