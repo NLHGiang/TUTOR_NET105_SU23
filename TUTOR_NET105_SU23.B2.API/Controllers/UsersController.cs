@@ -43,36 +43,39 @@ namespace TUTOR_NET105_SU23.B2.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] User user)
         {
-            if (!await _userServices.Create(user))
+            var result = await _userServices.Create(user);
+            if (!result)
             {
                 return BadRequest();
             }
 
-            return Ok();
+            return Ok(result);
         }
 
         // PUT api/<UsersController>/5
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(Guid id, [FromBody] User user)
         {
-            if (!await _userServices.Update(user))
+            var result = await _userServices.Update(user);
+            if (!result)
             {
                 return BadRequest();
             }
 
-            return Ok();
+            return Ok(result);
         }
 
         // DELETE api/<UsersController>/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
-            if (!await _userServices.Delete(id))
+            var result = await _userServices.Delete(id);
+            if (!result)
             {
                 return BadRequest();
             }
 
-            return Ok();
+            return Ok(result);
         }
     }
 }

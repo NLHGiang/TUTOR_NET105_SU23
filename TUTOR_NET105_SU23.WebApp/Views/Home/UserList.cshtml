@@ -2,10 +2,11 @@
 @model List<User>
 
 <div>
-    @foreach(var item in Model)
+    @foreach (var item in Model)
     {
         <div>
-            @string.Concat(item.Id, "-", item.Email)
+            @string.Concat(item.Id, " - ",item.UserName, " - ",item.Password, " - ",item.Email, " - ", item.PhoneNumber,  " - ", item.Status)
+            <a href="@Url.ActionLink("Delete","Home",new{id=item.Id})">Delete</a>
         </div>
     }
 </div>
